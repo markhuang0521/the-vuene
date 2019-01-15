@@ -1,28 +1,39 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./resources/styles.css";
+import Header from "./components/Header/Header";
+import Home from "./components/HomePage/HomePage";
+import Info from "./components/InfoPage/InfoPage";
+import HightLight from "./components/HightLight/HightLight";
+import Pricing from "./components/Price/Pricing";
+import Location from "./components/location";
+import Footer from "./components/Header/Footer";
+import { Element } from "react-scroll";
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+	render() {
+		return (
+			<div>
+				<Header />
+				<Element name="Home">
+					<Home />
+				</Element>
+				<Element name="Info">
+					<Info />
+				</Element>
+				<Element name="HightLight">
+					<HightLight />
+				</Element>
+				<Element name="Pricing">
+					<Pricing />
+				</Element>
+				<Element name="Location">
+					<Location />
+				</Element>
+
+				<Footer />
+			</div>
+		);
+	}
 }
 
 export default App;
